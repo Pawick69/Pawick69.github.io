@@ -41,11 +41,5 @@ function draw() {
         rystet++;
     }
     
-text('tæl op: ' + str(rystet*5), 50, height-100);
-text('tæl op: ' + str(flyttet*5),50, height-50);
-}
-
-function deviceMoved(){
-    flyttet++;
-
+text('TAL ' + str(rystet*5), 100, height-300);
 }
