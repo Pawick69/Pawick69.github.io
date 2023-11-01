@@ -23,49 +23,56 @@
         
     }
 
-    .beholder {
-        
-        max-width: 100%;
-        text-align: center;
-        color: rgb(31, 28, 28);
-        background-color: lightblue;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        /* 3 kolonner, fr står for fraction, */
-        /* grid-gap: 5%; */
-        /* %-enhed gør det også responsivt */
-    }
 
     .text{
+        height: 100px;
         text-align: center;
         color: black;
         background-color: lightblue;
     }
+
+    .text > h3 {
+        margin: 0px;
+    }
+
+    canvas.p5Canvas {
+        grid-area: center;
+    }
    
+    .beholder {
+        display: grid;
+        width: 100%;
+        height: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas: 'left center right';
+        justify-items: center;
+    }
     
     @media (max-width: 768px) {
         .beholder {
             grid-template-columns: 1fr 1fr;
+            grid-template-areas: 'left center';
             /* 2 kolonner på små skærme */
         }
     }
     @media (max-width: 480px) {
         .beholder {
             grid-template-columns: 1fr;
+            grid-template-areas: 'center';
             /* 1 kolonne på ekstra små skærme */
         }
     }
 </style>
 </head>
 <body>
-<div class="text">
-    <h3>GÅ UDENFOR!</h3>
-    <h3>VÆLG EN TABEL</h3>
-    <h3 id="5-TABELLEN">5-TABELLEN</h3>
-
-
- </div>
+    <div class="text">
+        <h3>GÅ UDENFOR!</h3>
+        <h3>VÆLG EN TABEL</h3>
+    </div>
     
+    <div class="beholder">
+
+    </div>
   
     <!-- <her kan man referere sin js-fil, fx -->
     <script src='move.js'></script>

@@ -1,33 +1,29 @@
-let y = 10; let r = 200; g = 180; b = 0;
+let y = 10;
 let ned = true;
 let rystet = 0;
-let flyttet = 0;
 let tal = 5;
 
+const mq = window.matchMedia("(max-width: 480px)");
+
 function setup() {
-    canvas = createCanvas(300, 550);
-    textSize(24);
-    // giver canvas border på 2 pixel, 
-    // og sørger derefter for at kanten tælles med i width
+    canvas = createCanvas((windowHeight - 140) / 20 * 10.5, (windowHeight - 140));
     canvas.elt.style.border = '5px solid black';
     canvas.elt.style.boxSizing = 'border-box';
     canvas.elt.style.borderRadius = '20px';
 
-    //canvas.parent('#beholder');
-    // gør canvas-elementet responsivt til skærmbredden
+ 
     canvas.elt.style.width = '100%';
     canvas.elt.style.height = '100%';
 
-    //bemærk at noden skal pakkes ud via .elt
-    //const parentDiv = select('#beholder').elt;
-    //const p = select('#test1').elt;
-    // indsæt canvas i ny position i rækkefølgen af elementer i div'en beholder
-    //parentDiv.insertBefore(canvas.elt, p);
-    //let overskrift = document.querySelector('#tal');
-    //console.log(overskrift);
+    document.getElementsByClassName("beholder")[0].appendChild(canvas.elt);
+    pixelDensity(1);
 }
 
+
+
 function draw() {
+    resizeCanvas((mq.matches) ? windowWidth : (windowHeight - 100) / 20 * 10.5, (windowHeight - 100));
+    background(173, 216, 230);
     if (ned)
         y++;
     else
@@ -40,6 +36,11 @@ function draw() {
         ned = !ned;
         rystet++;
     }
-    
-text('TAL ' + str(rystet*5), 100, height-300);
+    textSize(50)
+    text("5 TABELLEN", width/2, 100);
+
+    textSize(100)
+    textAlign(CENTER, CENTER);  
+
+    text(str(rystet*5), width/2, height/2);
 }
