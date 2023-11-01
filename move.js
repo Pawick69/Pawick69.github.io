@@ -41,6 +41,7 @@ function draw() {
 
     textSize(100)
     textAlign(CENTER, CENTER);  
-
     text(str(rystet*5), width/2, height/2);
+    if(rystet > 10)
+    rystet = 0
 }
