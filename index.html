@@ -25,6 +25,7 @@
 
 
     .text{
+        width: 100%;
         height: 100px;
         text-align: center;
         color: black;
@@ -42,7 +43,7 @@
     .beholder {
         display: grid;
         width: 100%;
-        height: 100%;
+        height: calc(100% - 100px);
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-areas: 'left center right';
         justify-items: center;
