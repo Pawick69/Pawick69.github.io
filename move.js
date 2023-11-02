@@ -5,6 +5,7 @@ let sidsteKlik = 0;
 const mq = window.matchMedia("(max-width: 480px)");
 
 function setup() {
+    pixelDensity(1);
     canvas = createCanvas((mq.matches) ? windowWidth : (windowHeight - 100) / 20 * 10.5, (windowHeight - 100));
     canvas.elt.style.border = '5px solid black';
     canvas.elt.style.boxSizing = 'border-box';
@@ -15,7 +16,7 @@ function setup() {
     canvas.elt.style.height = '100%';
 
     document.getElementsByClassName("beholder")[0].appendChild(canvas.elt);
-    pixelDensity(1);
+    
 }
 
 
