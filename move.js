@@ -1,7 +1,6 @@
-let y = 10;
-let ned = true;
 let rystet = 0;
 let tal = 5;
+let sidsteKlik = 0;
 
 const mq = window.matchMedia("(max-width: 480px)");
 
@@ -24,24 +23,19 @@ function setup() {
 function draw() {
     resizeCanvas((mq.matches) ? windowWidth : (windowHeight - 100) / 20 * 10.5, (windowHeight - 100));
     background(173, 216, 230);
-    if (ned)
-        y++;
-    else
-        y--;
-    if (y >= height || y <= 0)
-        ned = !ned;
-    if (accelerationX > 70) {
-        
-        if(rystet%2 == 0)
-        ned = !ned;
-        rystet++;
+    if (accelerationX > 70 && millis() - sidsteKlik < 500) {
+        rystet += 5;
+        sidsteKlik = millis();
     }
+
+    
+    
     textSize(50)
     text("5 TABELLEN", width/2, 100);
 
     textSize(100)
     textAlign(CENTER, CENTER);  
-    text(str(rystet*5), width/2, height/2);
-    if(rystet > 10)
+    text(str(rystet), width/2, height/2);
+    if(rystet > 50)
     rystet = 0
 }
