@@ -21,6 +21,7 @@ function setup() {
 
 
 function draw() {
+    console.log(windowWidth, windowHeight);
     resizeCanvas((mq.matches) ? windowWidth : (windowHeight - 100) / 20 * 10.5, (windowHeight - 100));
     background(173, 216, 230);
     if (accelerationX > 70 && millis() - sidsteKlik > 500) {
