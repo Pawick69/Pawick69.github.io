@@ -5,7 +5,7 @@ let sidsteKlik = 0;
 const mq = window.matchMedia("(max-width: 480px)");
 
 function setup() {
-    canvas = createCanvas((windowHeight - 140) / 20 * 10.5, (windowHeight - 140));
+    canvas = createCanvas((mq.matches) ? windowWidth : (windowHeight - 100) / 20 * 10.5, (windowHeight - 100));
     canvas.elt.style.border = '5px solid black';
     canvas.elt.style.boxSizing = 'border-box';
     canvas.elt.style.borderRadius = '20px';
@@ -29,8 +29,6 @@ function draw() {
         sidsteKlik = millis();
     }
 
-    
-    
     textSize(50)
     text("5 TABELLEN", width/2, 100);
 
@@ -39,4 +37,8 @@ function draw() {
     text(str(rystet), width/2, height/2);
     if(rystet > 50)
     rystet = 0
+}
+
+function windowResized() {
+    resizeCanvas(mq.matches) ? windowWidth : (windowHeight - 100) / 20 * 10.5, (windowHeight - 100);
 }
