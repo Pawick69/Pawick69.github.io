@@ -23,7 +23,7 @@ function setup() {
 function draw() {
     resizeCanvas((mq.matches) ? windowWidth : (windowHeight - 100) / 20 * 10.5, (windowHeight - 100));
     background(173, 216, 230);
-    if (accelerationX > 70 && millis() - sidsteKlik < 500) {
+    if (accelerationX > 70 && millis() - sidsteKlik > 500) {
         rystet += 5;
         sidsteKlik = millis();
     }
