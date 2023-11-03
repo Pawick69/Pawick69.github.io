@@ -30,7 +30,7 @@ function draw() {
     }
 
     textSize(47)
-    text("5 TABELLEN", width/2, 300);
+    text("5 TABELLEN", width/2, 220);
     text("VÆLG EN TABEL", width/2, 120);
     text("GÅ UDENFOR!", width/2, 50);
 
