@@ -34,7 +34,7 @@ function draw() {
     text("VÆLG EN TABEL", width/2, 120);
     text("GÅ UDENFOR!", width/2, 50);
     textSize(20)
-    text("Ryst telfeonen mens du tæller 5 tabellen", width/2, 550);
+    text("Ryst telefonen mens du tæller 5 tabellen", width/2, 550);
 
     textSize(100)
     textAlign(CENTER, CENTER);  
